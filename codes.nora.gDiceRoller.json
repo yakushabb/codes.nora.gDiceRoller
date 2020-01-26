@@ -1,14 +1,14 @@
 {
     "app-id" : "codes.nora.gDiceRoller",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.32",
+    "runtime-version" : "3.34",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.rust-stable"
     ],
     "command" : "codes.nora.gDiceRoller",
     "finish-args" : [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--share=ipc"
@@ -17,7 +17,7 @@
         "append-path" : "/usr/lib/sdk/rust-stable/bin",
         "env" : {
             "CARGO_HOME" : "/run/build/gRiceRoller/cargo",
-            "RUSTFLAGS" : "--error-format=short --remap-path-prefix =../",
+            "RUSTFLAGS" : "--remap-path-prefix =../",
             "RUST_BACKTRACE" : "1"
         }
     },
